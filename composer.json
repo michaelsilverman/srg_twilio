@@ -1,0 +1,14 @@
+{
+  "name": "drupal/srg_twilio",
+  "type": "drupal-module",
+  "description": "Controls the interface to Twilio",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/srg_twilio",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/srg_twilio",
+    "source": "http://cgit.drupalcode.org/srg_twilio"
+  },
+  "require": { }
+}

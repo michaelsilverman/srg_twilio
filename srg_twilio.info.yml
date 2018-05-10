@@ -1,0 +1,5 @@
+name: 'SRG Twilio'
+type: module
+description: 'Controls the interface to Twilio'
+core: 8.x
+package: 'SRG'

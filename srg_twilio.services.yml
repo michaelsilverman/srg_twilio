@@ -1,0 +1,4 @@
+services:
+  srg_twilio.command:
+    class: Drupal\srg_twilio\Services\Command
+    arguments: ['client_name']

@@ -1,0 +1,13 @@
+srg_twilio.test:
+  path: '/twilio/test'
+  defaults:
+    _controller: \Drupal\srg_twilio\Controller\SRGTwilioController::getCompany
+  requirements:
+    _access: 'TRUE'
+
+srg_twilio.send:
+  path: '/twilio/sendtext'
+  defaults:
+    _controller: \Drupal\srg_twilio\Controller\SRGTwilioController::sendText
+  requirements:
+    _access: 'TRUE'
