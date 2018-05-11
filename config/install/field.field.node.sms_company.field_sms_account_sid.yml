@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sms_account_sid
+    - node.type.sms_company
+id: node.sms_company.field_account_sid
+field_name: field_sms_account_sid
+entity_type: node
+bundle: sms_company
+label: 'Account ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

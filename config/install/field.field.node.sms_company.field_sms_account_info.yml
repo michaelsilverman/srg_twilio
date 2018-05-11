@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sms_account_info
+    - node.type.sms_company
+  module:
+    - text
+id: node.sms_company.field_sms_account_info
+field_name: field_sms_account_info
+entity_type: node
+bundle: sms_company
+label: 'Provider account info'
+description: 'provider account info.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: string

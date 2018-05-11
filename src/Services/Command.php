@@ -38,13 +38,12 @@ class Command {
           ->condition('type', 'sms_company')
           ->condition('title', $client_name, '=');
       $nids = $query->execute();
-      $node = node_load(1);
-   //   $node->get('field_machine_name')->getValue();
+      dpm($nids, 'nids');
+      $node = node_load(reset($nids));
       $this->sid = $node->get('field_sms_account_sid');
       $this->provider = $node->get('field_sms_provider');
       $this->number = $node->get('field_sms_phone_number');
       $this->token = $node->get('field_sms_token_id');
-   //   $this->number = $this->getNumber();
   }
 
 
@@ -81,13 +80,13 @@ class Command {
     return $this->sid->getValue()[0]['value'];
   }
 
-    public function getProvider() {
-        return $this->provider->getValue()[0]['value'];
-    }
+  public function getProvider() {
+     return $this->provider->getValue()[0]['value'];
+  }
 
-    public function getNumber() {
-        return $this->number->getValue()[0]['value'];
-    }
+  public function getNumber() {
+    return $this->number->getValue()[0]['value'];
+  }
 
 
   /**
@@ -103,11 +102,12 @@ class Command {
    *     mediaUrl => absolute URL
    *   ].
    */
-  public function messageSend(string $number, $message) {
-    if (is_string($message)) {
+  public function messageSend(string $number, $text, $image_url) {
+    if (is_string($text)) {
       $message = [
         'from' => $this->getNumber(),
-        'body' => $message,
+        'body' => $text,
+        'mediaUrl' => $image_url,
       ];
     }
     $message['from'] = !empty($message['from']) ? $message['from'] : $this->number;

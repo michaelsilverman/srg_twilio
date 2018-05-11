@@ -158,12 +158,8 @@ class SRGTwilioController extends ControllerBase {
       $token = $fred->getToken();
       $sid = $fred->getSid();
       $markup = [
-       //   '#markup' => $number.' '.$token.' '.$sid,
-          '#markup' => 'ffred',
+          '#markup' => $number.' '.$token.' '.$sid,
       ];
-dpm($sid, 'sid');
-dpm($token, 'token');
-dpm($number, 'number');
       return $markup;
 
   }
@@ -175,22 +171,22 @@ dpm($number, 'number');
      *   The sender's company name.
 
      */
+
+    // not going to use this one
     public function sendText() {
         $client_name = 'Aluminum Company';
         $client_info = new Command($client_name);
-        $client_info->messageSend('6308999711', 'fred');
+        $message = getMessage($messageID);
+
+    // Get message to send
+        $client_info->messageSend('6308999711', 'fred', $image_url);
         $number = $client_info->getNumber();
         $token = $client_info->getToken();
         $sid = $client_info->getSid();
         $markup = [
-            //   '#markup' => $number.' '.$token.' '.$sid,
-            '#markup' => 'ffred',
+               '#markup' => 'Text send to: '.$number.' '.$token.' '.$sid,
         ];
-        dpm($sid, 'sid');
-        dpm($token, 'token');
-        dpm($number, 'number');
         return $markup;
-
     }
 
 }
